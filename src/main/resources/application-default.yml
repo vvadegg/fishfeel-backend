@@ -1,0 +1,26 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fishfeel
+    username: fishfeel
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    hibernate.ddl-auto: none
+
+  liquibase:
+    change-log: classpath:/liquibase/fishfeel/db.changelog-master.xml
+
+user:
+  default.status: ACTIVE;
+
+jwt:
+  token:
+    secret: secretKeyPhrase
+    expired: 3600000
+
